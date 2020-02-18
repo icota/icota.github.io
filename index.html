@@ -1,33 +1,257 @@
-Bitcoin Core Road to Mobile tracker
+<title>Bitcoin Core Road to Mobile</title>
 
-Usable mobile full nodes within your lifetime*
+<head>
+    <div class="content">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                font-size: 24px;
+            }
 
-Android NDK build
-https://github.com/bitcoin/bitcoin/pull/16110
+            .content {
+                max-width: 1000px;
+                margin: auto;
+            }
 
-Mobile GUI
-https://github.com/bitcoin/bitcoin/pull/16883
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+            }
 
-Android packaging
-https://github.com/bitcoin/bitcoin/pull/17227
+            .fa-twitter {
+                color: black;
+            }
 
-Android Gitian build
+            .fa-linkedin {
+                color: black;
+            }
+        </style>
+        </head>
 
-Static Qt
-https://codereview.qt-project.org/c/qt/qtbase/+/279386
+<body>
+<table cellpadding="15">
+    <td><img src="core.png"></td>
+    <td><i class="material-icons" style="font-size:50px">
+        flash_on
+    </i>
+        <h1>Lightning Network</h1>
+        <br/>
+        <br/>
+        <i class="material-icons" style="font-size:50px">
+            contactless
+        </i>
+        <h1>NFC</h1>
+        <br/>
+        <br/>
+        <i class="material-icons" style="font-size:50px">
+            bluetooth
+        </i>
+        <h1>Bluetooth</h1></td>
 
-QR Code scanner
-https://github.com/bitcoin/bitcoin/issues/9913
 
-NFC support
+</table>
 
-Power management
+<h2>Usable, sexy and mobile full nodes within your lifetime<a href="#smallprint" style="text-decoration: none">*</a>
+</h2>
+<br/>
+Bitcoin Core is the fastest, safest, most compliant and most tested implementation of the Bitcoin protocol.<br/><br/>
+Instead of reinventing the wheel let's just make it usable on mobile and empower users by putting a full node in their
+pocket. Add Lightning, NFC and Bluetooth support to make
+it even more awesome and private.<br/><br/>
+Never have to debate big-blockers again.<br/>
+<br/>
+This is a non-exhaustive tracker of both smaller tasks and serious efforts I find important on Bitcoin Core's road to
+mobile. Focus is on Android but most of these improvements should benefit a future iOS port as well.
 
-Lightning Network
+<table cellpadding="20">
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">done</i><br/>Merged</td>
+        <td><b>Android NDK build</b><br/><br/>
+            Allow Bitcoin Core to be build against the Android NDK. First step on the long road to mobile.<br/>
+            <a href="https://github.com/bitcoin/bitcoin/pull/16110">depends: Add Android NDK support #16110 by Igor
+                Cota</a>
+        </td>
+    </tr>
 
-Assume UTXO
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">alarm_on</i><br/>Code review in
+            progress
+        </td>
+        <td><b>NDK build improvements</b><br/><br/>
+            <a href="https://github.com/bitcoin/bitcoin/pull/17396">build: modest Android improvements #17396 by Igor
+                Cota</a>
+        </td>
+    </tr>
 
-utreexo
-https://dci.mit.edu/utreexo
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">done</i><br/>Merged</td>
+        <td><b>Fix GNU autoconf pthread Android bug</b><br/><br/>
+            <a href="https://github.com/autoconf-archive/autoconf-archive/pull/211">ax_boost_thread: do not set -pthread
+                on Android by Igor Cota</a>
+        </td>
+    </tr>
 
-*5 years tops
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">alarm_on</i><br/>Code review in
+            progress
+        </td>
+        <td><b>Static Qt</b><br/><br/>
+            Qt is the C++ framework Satoshi chose for the original Bitcoin client GUI. Allow one to link it statically
+            on Android and avoid bundling all the Qt libraries when packaging Bitcoin Core in its APK.<br/>
+            <a href="https://codereview.qt-project.org/c/qt/qtbase/+/279386">Remove Core qjnionload.cpp in favor of
+                Android QPA androidjnimain.cpp by Igor Cota</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (60%)
+        </td>
+        <td><b>Mobile GUI</b><br/><br/>
+            A mobile app needs a slick UI. The QML-based one I'm working on is meant to be a drop-in alternative to Qt
+            Widgets-based bitcoingui. It is light and builds on top of GUI current code. I also have a novel idea: on
+            startup avoid
+            displaying balance and transactions and go straight into QR scanning. Make the whole flow more private cause
+            the user
+            probably just wants to pay for something anyway.<br/>
+            <a href="https://github.com/bitcoin/bitcoin/pull/16883">WIP: Qt: add QML based mobile GUI #16883 by Igor
+                Cota</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">alarm_on</i><br/>Code review in
+            progress
+        </td>
+        <td><b>Android packaging</b><br/><br/>
+            This PR aims to make it very easy to produce a Bitcoin Core APK (Android application package).<br/>
+            <a href="https://github.com/bitcoin/bitcoin/pull/17227">Qt: Add Android packaging support #17227 by Igor
+                Cota</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">clear</i><br/>Not yet started
+        </td>
+        <td><b>Android Gitian build</b><br/><br/>
+            Gitian will allow us to have trusted binaries built and signed by multiple parties. You would be able to
+            verify your Bitcoin Core APK.
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (30%)
+        </td>
+        <td><b>QR Code scanner</b><br/><br/>
+            A mobile wallet that is not able to scan QR codes is not very useful. There is a possibility of replacing
+            the qrencode dependency with QZXing. This would allow for scanning of QR codes. I have tested this and it
+            works
+            fine. But to add a new dependency to Core we need an official QZXing release at the very least.<br/>
+            <a href="https://github.com/bitcoin/bitcoin/issues/9913">QR Code scanner #9913 by Luke Dashjr</a>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">clear</i><br/>Not yet started
+        </td>
+        <td><b>NFC and Bluetooth support</b><br/><br/>
+            QR codes are cool and all but imagine a dystopian future where our world is blanketed with CCTV. Your
+            transactions could be linked to your face and person via chainalysis. NFC and Bluetooth are peer to peer
+            radio
+            communication and allow us a bit more privacy. Many users are familiar with using NFC for "contactless"
+            payments. For such a huge win in UX this is quite easy to implement.
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">clear</i><br/>Not yet started
+        </td>
+        <td><b>Power and data management</b><br/><br/>
+            Verifying transactions is CPU intensive. Lest you want your battery drained and your phone getting hot
+            in your pocket this is best done either when the app is in the foreground or phone is charging. A platform
+            independent way to determine the charging and network state would need to be devised. This would be
+            useful for laptops as well as for phones. Phones obviously provide for this, a Linux laptop can read from
+            sys/class/power_supply.
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (50%)
+        </td>
+        <td><b>Lightning Development Kit (rust-lightning)</b><br/><br/>
+            Instantaneous transactions work so well on mobile, it's just such a great fit. LDK makes it very easy to add
+            Lightning Network functionality to existing wallet software. See below how I used it to make Bitcoin Core
+            lightning-enabled.<br/>
+            <a href="https://github.com/rust-bitcoin/rust-lightning">Rust-Lightning, not Rusty's Lightning!</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (20%)
+        </td>
+        <td><b>CoreLightning</b><br/><br/>
+            This work-in-progress is the result of my very experimental work with rust-lightning on top of Matt
+            Corallo's rusty PRs. It's early days but one can make channels and payments.
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (40%)
+        </td>
+        <td><b>assumeutxo</b><br/><br/>
+            assumeuxto would substantially reduce the time needed to bootstrap a full node. Instead of verifying
+            everything yourself which takes days (weeks on mobile) you trust the devs to bake a hash of the recent UTXO
+            set into the Bitcoin Core binary. If someone has tricked you into using a malicious binary you are boned
+            anyway so IMO this
+            is an acceptable tradeoff.<br/>
+            <a href="https://github.com/bitcoin/bitcoin/projects/11">Assume UTXO project by James O'Beirne</a>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center"><i class="material-icons" style="font-size:40px">build</i><br/>Work in progress
+            (20%)
+        </td>
+        <td><b>utreexo</b><br/><br/>
+            "Utreexo is a novel hash based dynamic accumulator, which allows the millions of unspent outputs to be
+            represented in under a kilobyte. Currently transactions specify inputs and outputs, and verifying an input
+            requires you to know the whole state of the system. With Utreexo, the holder of funds maintains a proof that
+            the funds exist, and provides that proof at spending time to the other nodes. These proofs are compact
+            but do represent the main downside in the utreexo model they present an additional data
+            transmission overhead which allows much smaller state." I find the transmission overhead acceptable on
+            mobile since phones are
+            hardware constrained but increasingly not data constrained.<br/>
+            <a href="https://dci.mit.edu/utreexo">utreexo: a dynamic accumulator for bitcoin state research by Thaddeus
+                Dryja</a>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<h6 id="smallprint">* 5 years tops. Progress estimates used on the tracker are my own and somewhat arbitrary.</h6>
+Made by <a href="https://github.com/icota">Igor Cota</a>. I work on this in my spare time.<br/><br/>
+<a href="https://twitter.com/icota_" class="fa fa-twitter"></a> / <a
+        href="https://www.linkedin.com/in/igor-cota-b168b168" class="fa fa-linkedin"></a>
+<br/>
+</div>
+</body>
+
