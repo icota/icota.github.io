@@ -34,6 +34,10 @@
             .fa-linkedin {
                 color: black;
             }
+
+            .fa-github {
+                color: black;
+            }
         </style>
         </head>
 
@@ -77,7 +81,7 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
 <br/><br/><br/>
 <table cellpadding="20">
     <tr>
-        <td style="text-align:center" width="15%"><i class="material-icons" style="font-size:40px">done</i><br/>Merged
+        <td style="text-align:center" width="20%"><i class="material-icons" style="font-size:40px">done</i><br/>Merged
         </td>
         <td><b>Android NDK build</b><br/><br/>
             Allow Bitcoin Core to be built against the Android NDK. First step on the long road to mobile.<br/>
@@ -187,7 +191,8 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
             Verifying transactions is CPU intensive. Lest you want your battery drained and your phone getting hot
             in your pocket this is best done either when the app is in the foreground or phone is charging. A platform
             independent way to determine the charging and network state would need to be devised. This would be
-            useful for laptops as well as for phones. Phones obviously provide for this, a Linux laptop can read from
+            useful for laptops as well as for phones. Phones obviously provide for this, but eg. a Linux laptop can read
+            from
             sys/class/power_supply.
         </td>
     </tr>
@@ -197,10 +202,12 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
             (50%)
         </td>
         <td><b>Lightning Development Kit (rust-lightning)</b><br/><br/>
-            Instantaneous transactions work so well on mobile, it's just such a great fit. LDK makes it very easy to add
-            Lightning Network functionality to existing wallet software. See below how I leveraged it to make Bitcoin
+            Instantaneous transactions work so well on mobile, it's a great fit. Pair it with NFC and we're beating Visa
+            at their game. rust-bitcoin is a library that makes it very easy to add
+            Lightning Network functionality to existing wallet software. I leveraged rust-bitcoin team's awesome work to
+            try and make Bitcoin
             Core
-            lightning-enabled.<br/>
+            lightning-enabled. See CoreLightning below.<br/>
             <a href="https://github.com/rust-bitcoin/rust-lightning">Rust-Lightning, not Rusty's Lightning!</a>
         </td>
     </tr>
@@ -223,7 +230,7 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
         </td>
         <td><b>assumeutxo</b><br/><br/>
             assumeuxto would substantially reduce the time needed to bootstrap a full node. Instead of verifying
-            everything yourself which takes days (weeks on mobile) you trust the devs to bake a hash of the recent UTXO
+            everything yourself which takes days (weeks on mobile) you trust the devs to bake a hash of a recent UTXO
             set into the Bitcoin Core binary. If someone has tricked you into using a malicious binary you are boned
             anyway so IMO this
             is an acceptable tradeoff.<br/>
@@ -256,9 +263,10 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
 <br/>
 <h6 id="smallprint">* 5 years tops. But progress estimates (and commentary) on the tracker are my own, so I could be way
     off.</h6><br/><br/><br/>
-Made by <a href="https://github.com/icota">Igor Cota</a>. I do this in my spare time.<br/>
+Made by Igor Cota. I do this in my spare time.<br/><br/>
 <a href="https://twitter.com/icota_" class="fa fa-twitter"></a> / <a
-        href="https://www.linkedin.com/in/igor-cota-b168b168" class="fa fa-linkedin"></a>
+        href="https://www.linkedin.com/in/igor-cota-b168b168" class="fa fa-linkedin"></a> / <a
+        href="https://github.com/icota" class="fa fa-github"></a>
 <br/>
 </div>
 </body>
