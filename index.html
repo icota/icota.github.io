@@ -60,18 +60,20 @@
 
 </table>
 
-<h2>Usable, sexy and mobile full nodes within your lifetime<a href="#smallprint" style="text-decoration: none">*</a>
+<h2>Usable and sexy mobile full nodes within your lifetime<a href="#smallprint" style="text-decoration: none">*</a>
 </h2>
-<br/>
-Bitcoin Core is the fastest, safest, most compliant and most tested implementation of the Bitcoin protocol.<br/><br/>
-Instead of reinventing the wheel let's just make it usable on mobile and empower users by putting a full node in their
+<br/><br/>
+Bitcoin Core is the fastest, safest and most battle-tested implementation of the Bitcoin protocol.<br/><br/>
+This is mission critical software so instead of reinventing the wheel and making another mobile wallet let's make Bitcoin
+Core usable on mobile instead. Let's empower users by putting a full node in their
 pocket. Add Lightning, NFC and Bluetooth support to make
 it even more awesome and private.<br/><br/>
-Never have to debate big-blockers again.<br/>
-<br/>
-This is a non-exhaustive tracker of both smaller tasks and serious efforts I find important on Bitcoin Core's road to
-mobile. Focus is on Android but most of these improvements should benefit a future iOS port as well.
-
+Never debate big-blockers again.<br/>
+<br/><br/><br/>
+(What follows is a non-exhaustive tracker of both smaller tasks and serious efforts I find important on Bitcoin Core's
+road to
+mobile. Focus is on Android but most of these improvements should benefit a future iOS port as well.)
+<br/><br/><br/>
 <table cellpadding="20">
     <tr>
         <td style="text-align:center"><i class="material-icons" style="font-size:40px">done</i><br/>Merged</td>
@@ -194,7 +196,7 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
         </td>
         <td><b>Lightning Development Kit (rust-lightning)</b><br/><br/>
             Instantaneous transactions work so well on mobile, it's just such a great fit. LDK makes it very easy to add
-            Lightning Network functionality to existing wallet software. See below how I used it to make Bitcoin Core
+            Lightning Network functionality to existing wallet software. See below how I leveraged it to make Bitcoin Core
             lightning-enabled.<br/>
             <a href="https://github.com/rust-bitcoin/rust-lightning">Rust-Lightning, not Rusty's Lightning!</a>
         </td>
@@ -205,8 +207,9 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
             (20%)
         </td>
         <td><b>CoreLightning</b><br/><br/>
-            This work-in-progress is the result of my very experimental work with rust-lightning on top of Matt
-            Corallo's rusty PRs. It's early days but one can make channels and payments.
+            This work-in-progress is the result of me dabbling with rust-lightning on top of Matt
+            Corallo's rusty PRs. It's experimental and unstable but one can make Lightning channels and payments from
+            their Bitcoin Core wallet.
         </td>
     </tr>
 
@@ -236,7 +239,8 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
             requires you to know the whole state of the system. With Utreexo, the holder of funds maintains a proof that
             the funds exist, and provides that proof at spending time to the other nodes. These proofs are compact
             but do represent the main downside in the utreexo model they present an additional data
-            transmission overhead which allows much smaller state." I find the transmission overhead acceptable on
+            transmission overhead which allows much smaller state." <br/><br/>I find the transmission overhead
+            acceptable on
             mobile since phones are
             hardware constrained but increasingly not data constrained.<br/>
             <a href="https://dci.mit.edu/utreexo">utreexo: a dynamic accumulator for bitcoin state research by Thaddeus
@@ -247,8 +251,8 @@ mobile. Focus is on Android but most of these improvements should benefit a futu
 
 <br/>
 <br/>
-<h6 id="smallprint">* 5 years tops. Progress estimates used on the tracker are my own and somewhat arbitrary.</h6>
-Made by <a href="https://github.com/icota">Igor Cota</a>. I work on this in my spare time.<br/><br/>
+<h6 id="smallprint">* 5 years tops. But progress estimates and commentary on the tracker are my own, so I could be way off.</h6><br/><br/><br/>
+Made by <a href="https://github.com/icota">Igor Cota</a>. I do this in my spare time.<br/>
 <a href="https://twitter.com/icota_" class="fa fa-twitter"></a> / <a
         href="https://www.linkedin.com/in/igor-cota-b168b168" class="fa fa-linkedin"></a>
 <br/>
